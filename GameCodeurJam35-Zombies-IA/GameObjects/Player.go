@@ -13,8 +13,68 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "Skill_Poison"
+  component: "/Scripts/Skill_Poison.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "Skill_Explode"
+  component: "/Scripts/Skill_Explode.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "Skill_Attack_Target"
+  component: "/Scripts/Skill_Attack_Target.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "Skill_Control"
+  component: "/Scripts/Skill_Control.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
-  id: "collisionobject"
+  id: "Player_collider"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
   "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
@@ -62,7 +122,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "sprite"
+  id: "sprite_player"
   type: "sprite"
   data: "tile_set: \"/Atlas/Player.atlas\"\n"
   "default_animation: \"playerTemp\"\n"
