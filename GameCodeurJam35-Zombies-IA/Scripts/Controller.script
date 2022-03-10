@@ -16,7 +16,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	-- isPressed
+	-- isPressed Keyboard / buttons
 	if action.pressed then
 		if action_id == hash("action") then
 			game.controls.action = true
@@ -28,7 +28,7 @@ function on_input(self, action_id, action)
 	end
 
 
-	-- isDown
+	-- isDown Keyboard / buttons
 	if action.pressed or action.repeated then
 		if action_id == hash("left") then
 			game.controls.left = true
@@ -54,6 +54,36 @@ function on_input(self, action_id, action)
 			game.controls.actionIsDown = false
 		end
 	end
+
+	-- GamePad Raw input
+	--action.gamepad_axis[1] == -1 left # right 1
+	--action.gamepad_axis[2] == -1 down # up 1
+	-- pprint(action.gamepad_hats) --dpad
+	if action.value then
+		if action_id == hash("raw") then
+			if action.gamepad_axis[1] ~= 0 or action.gamepad_axis[2]  ~= 0 then
+				game.sticks.left = vmath.vector3(action.gamepad_axis[1], action.gamepad_axis[2], 0)
+			end
+			if action.gamepad_axis[1] <= -0.5 then
+				game.controls.left = true
+			elseif action.gamepad_axis[1] >= 0.5 then
+				game.controls.right = true
+			else
+				game.controls.left = false
+				game.controls.right = false
+			end
+			--
+			if action.gamepad_axis[2] <= -0.5 then
+				game.controls.down = true
+			elseif action.gamepad_axis[2] >= 0.5 then
+				game.controls.up = true
+			else
+				game.controls.down = false
+				game.controls.up = false
+			end
+		end
+	end
+	
 
 	-- cant move 2 directions opposate
 	if game.controls.left and game.controls.right then

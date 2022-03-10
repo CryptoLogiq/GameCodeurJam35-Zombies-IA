@@ -6,14 +6,19 @@
 game = {waitingStart=true, start=false}
 
 game.controls = {left=false,right=false,up=false,down=false,action=false,actionIsDown=false}
+game.sticks = {}
+game.sticks.left = vmath.vector3(0, 0, 0)
+game.sticks.right = vmath.vector3(0, 0, 0)
 
 function game.initControls()
 	for k, v in pairs(game.controls) do
 		k = false
 	end
+	game.sticks.left = vmath.vector3(0, 0, 0)
+	game.sticks.right = vmath.vector3(0, 0, 0)
 end
 
-function game.getControls()
+function game.getVector2()
 	local ctrl = game.controls
 	local x, y = 0, 0
 	if ctrl.left and ctrl.right then
@@ -39,8 +44,15 @@ function game.getControls()
 	return x, y
 end
 
-function game.getControlsNormalise()
-	local x, y = game.getControls()
+function game.getVector2Normalise()
+	local x, y = 0, 0
+	--
+	if game.sticks.left == vmath.vector3(0, 0, 0) then
+		x, y = game.getVector2()
+	else
+		x, y = game.sticks.left.x, game.sticks.left.y
+	end
+	--
 	local norm_x, norm_y = math.normalize(x,y)
 	return norm_x, norm_y
 end

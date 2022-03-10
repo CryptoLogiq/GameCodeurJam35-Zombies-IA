@@ -12,7 +12,7 @@ end
 
 function update(self, dt)
 	
-	local norm_x, norm_y = game.getControlsNormalise()
+	local norm_x, norm_y = game.getVector2Normalise()
 	--
 	self.velocity = vmath.vector3(norm_x,norm_y,0)
 	--

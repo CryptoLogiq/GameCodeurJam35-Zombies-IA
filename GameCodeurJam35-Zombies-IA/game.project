@@ -5,8 +5,8 @@ main_collection = /main/game.collectionc
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 1280
+height = 720
 update_frequency = 60
 vsync = 0
 
@@ -22,8 +22,16 @@ show_console_banner = 0
 
 [physics]
 debug = 1
+debug_alpha = 0.5
 
 [input]
 repeat_delay = 0.0
 repeat_interval = 0.0
+
+[sprite]
+max_count = 256
+
+[gui]
+max_particlefx_count = 128
+max_count = 128
 
