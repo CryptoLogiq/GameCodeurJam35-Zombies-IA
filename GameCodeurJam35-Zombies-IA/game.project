@@ -8,6 +8,7 @@ shared_state = 1
 width = 960
 height = 640
 update_frequency = 60
+vsync = 0
 
 [android]
 input_method = HiddenInputField
@@ -18,4 +19,11 @@ title = GameCodeurJam35-Zombies-IA
 [html5]
 show_made_with_defold = 0
 show_console_banner = 0
+
+[physics]
+debug = 1
+
+[input]
+repeat_delay = 0.0
+repeat_interval = 0.0
 

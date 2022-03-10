@@ -1,7 +1,7 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	self.position = go.get_position()
+	self.velocity = vmath.vector3(0, 0, 0)
+	self.speed = 600
 end
 
 function final(self)
@@ -11,9 +11,13 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	
+	local norm_x, norm_y = game.getControlsNormalise()
+	--
+	self.velocity = vmath.vector3(norm_x,norm_y,0)
+	--
+	self.position = self.position + (self.velocity * self.speed * dt)
+	go.set_position(self.position)
 end
 
 function on_message(self, message_id, message, sender)

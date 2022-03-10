@@ -1,0 +1,72 @@
+require "Scripts_Lua.GameManager"
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	game.initControls()
+end
+
+function final(self)
+end
+
+function update(self, dt)
+	game.initControls()
+end
+
+function on_message(self, message_id, message, sender)
+end
+
+function on_input(self, action_id, action)
+	-- isPressed
+	if action.pressed then
+		if action_id == hash("action") then
+			game.controls.action = true
+		end
+	else
+		if action_id == hash("action") then
+			game.controls.action = false
+		end
+	end
+
+
+	-- isDown
+	if action.pressed or action.repeated then
+		if action_id == hash("left") then
+			game.controls.left = true
+		elseif action_id == hash("right") then
+			game.controls.right = true
+		elseif action_id == hash("up") then
+			game.controls.up = true
+		elseif action_id == hash("down") then
+			game.controls.down = true
+		elseif action_id == hash("action") then
+			game.controls.actionIsDown = true
+		end
+	elseif action.released then
+		if action_id == hash("left") then
+			game.controls.left = false
+		elseif action_id == hash("right") then
+			game.controls.right = false
+		elseif action_id == hash("up") then
+			game.controls.up = false
+		elseif action_id == hash("down") then
+			game.controls.down = false
+		elseif action_id == hash("action") then
+			game.controls.actionIsDown = false
+		end
+	end
+
+	-- cant move 2 directions opposate
+	if game.controls.left and game.controls.right then
+		game.controls.left = false
+		game.controls.right = false
+	end
+	-- cant move 2 directions opposate
+	if game.controls.up and game.controls.down then
+		game.controls.up = false
+		game.controls.down = false
+	end
+end
+
+function on_reload(self)
+	game.initControls()
+end
