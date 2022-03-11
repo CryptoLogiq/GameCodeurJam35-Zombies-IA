@@ -1,7 +1,72 @@
-tile_set: ""
+tile_set: "/ressources/tilesheet/Crypte_71.tilesource"
 layers {
-  id: "layer1"
+  id: "layer"
   z: 0.0
   is_visible: 1
+  cell {
+    x: 1
+    y: 0
+    tile: 153
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 1
+    y: 1
+    tile: 137
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 0
+    y: 2
+    tile: 120
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 1
+    y: 2
+    tile: 121
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 2
+    y: 2
+    tile: 122
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 0
+    y: 3
+    tile: 104
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 1
+    y: 3
+    tile: 105
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
+  cell {
+    x: 2
+    y: 3
+    tile: 106
+    h_flip: 0
+    v_flip: 0
+    rotate90: 0
+  }
 }
 material: "/builtins/materials/tile_map.material"
+blend_mode: BLEND_MODE_ALPHA
