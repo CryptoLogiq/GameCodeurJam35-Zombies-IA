@@ -18,16 +18,26 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("add_life") then                 -- [2]
-		self.life = self.life + message.life             -- [3]
+	if message_id == hash("add_life") then
+		self.life = self.life + message.life
 		if self.life > self.lifeMax then self.life = self.lifeMax end
-		local lifenode = gui.get_node("life")             -- [4]
-		gui.set_text(lifenode, "Life : " ..self.life.."/".. self.lifeMax)    -- [5]
-	elseif message_id == hash("add_mana") then                 -- [2]
-		self.mana = self.mana + message.mana             -- [3]
+		local lifenode = gui.get_node("life")
+		gui.set_text(lifenode, "Life : " ..self.life.."/".. self.lifeMax)
+		--
+		local barrelifenode = gui.get_node("barre_life")
+		local PctLife = self.life/self.lifeMax
+		local vector = vmath.vector3(1,PctLife,1)
+		gui.set_scale(barrelifenode, vector)
+	elseif message_id == hash("add_mana") then
+		self.mana = self.mana + message.mana
 		if self.mana > self.manaMax then self.mana = self.manaMax end
-		local mananode = gui.get_node("mana")             -- [4]
-		gui.set_text(mananode, "Mana : " ..self.mana.."/".. self.manaMax)    -- [5] 
+		local mananode = gui.get_node("mana")
+		gui.set_text(mananode, "Mana : " ..self.mana.."/".. self.manaMax)
+		--
+		local barremananode = gui.get_node("barre_mana")
+		local PctMana = self.mana/self.manaMax
+		local vector = vmath.vector3(1,PctMana,1)
+		gui.set_scale(barremananode, vector)
 	end 
 end
 
