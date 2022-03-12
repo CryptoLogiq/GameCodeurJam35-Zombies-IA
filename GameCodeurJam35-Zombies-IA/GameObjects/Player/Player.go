@@ -124,8 +124,8 @@ embedded_components {
 embedded_components {
   id: "sprite_player"
   type: "sprite"
-  data: "tile_set: \"/ressources/spritesheet/hero.tilesource\"\n"
-  "default_animation: \"right\"\n"
+  data: "tile_set: \"/ressources/spritesheet/dudeWutIsScratch.tilesource\"\n"
+  "default_animation: \"idle_down\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
