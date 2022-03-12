@@ -1,6 +1,8 @@
 function init(self)
-	self.life = 100
-	self.mana = 50
+	self.life = 1
+	self.lifeMax = 100
+	self.mana = 1
+	self.manaMax = 50
 end
 
 function final(self)
@@ -18,12 +20,14 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("add_life") then                 -- [2]
 		self.life = self.life + message.life             -- [3]
+		if self.life > self.lifeMax then self.life = self.lifeMax end
 		local lifenode = gui.get_node("life")             -- [4]
-		gui.set_text(lifenode, "Life : " .."\n".. self.life)    -- [5]
+		gui.set_text(lifenode, "Life : " ..self.life.."/".. self.lifeMax)    -- [5]
 	elseif message_id == hash("add_mana") then                 -- [2]
 		self.mana = self.mana + message.mana             -- [3]
+		if self.mana > self.manaMax then self.mana = self.manaMax end
 		local mananode = gui.get_node("mana")             -- [4]
-		gui.set_text(mananode, "Mana : " .."\n".. self.mana)    -- [5] 
+		gui.set_text(mananode, "Mana : " ..self.mana.."/".. self.manaMax)    -- [5] 
 	end 
 end
 

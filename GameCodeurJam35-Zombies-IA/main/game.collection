@@ -1,10 +1,10 @@
 name: "default"
 instances {
   id: "Player"
-  prototype: "/GameObjects/Player.go"
+  prototype: "/GameObjects/Player/Player.go"
   position {
-    x: 64.0
-    y: 64.0
+    x: 640.0
+    y: 500.0
     z: 0.0
   }
   rotation {
@@ -21,7 +21,7 @@ instances {
 }
 instances {
   id: "Controller"
-  prototype: "/GameObjects/Controller.go"
+  prototype: "/GameObjects/Player/Controller.go"
   position {
     x: 0.0
     y: 0.0
@@ -41,7 +41,7 @@ instances {
 }
 instances {
   id: "Map"
-  prototype: "/GameObjects/Map.go"
+  prototype: "/GameObjects/Maps/Map.go"
   position {
     x: 0.0
     y: 0.0
@@ -61,7 +61,7 @@ instances {
 }
 instances {
   id: "UI_Game"
-  prototype: "/GameObjects/UI_Game.go"
+  prototype: "/GameObjects/UI/UI_Game.go"
   position {
     x: 0.0
     y: 0.0

@@ -1,7 +1,7 @@
 function init(self)
 	self.position = go.get_position()
 	self.velocity = vmath.vector3(0, 0, 0)
-	self.speed = 600
+	self.speed = 300
 end
 
 function final(self)
