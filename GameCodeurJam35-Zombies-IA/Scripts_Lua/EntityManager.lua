@@ -5,8 +5,8 @@
 
 Lst_Entity = {}
 
-function newEntity(self, pID, pType)
-	print(self)
+function newEntity(self, pID, pType) -- self == script self (not GameObject self)
+
 	-- Search if entity allready exist :
 	for _, entity in ipairs(Lst_Entity) do
 		if entity.ID == pID then
@@ -14,6 +14,7 @@ function newEntity(self, pID, pType)
 			return entity
 		end
 	end
+	
 	-- New entity :
 	local entity = {ID=pID, type=pType, index=#Lst_Entity+1} -- identity
 	-- controls
@@ -26,4 +27,5 @@ function newEntity(self, pID, pType)
 	--
 	self.entity = entity
 	return entity
+	
 end
