@@ -5,7 +5,7 @@
 
 game = {waitingStart=true, start=false}
 
-game.controls = {left=false,right=false,up=false,down=false,action=false,actionIsDown=false}
+game.controls = {left=false,right=false,up=false,down=false,idle=false,action=false,actionIsDown=false}
 game.sticks = {}
 game.sticks.left = vmath.vector3(0, 0, 0)
 game.sticks.right = vmath.vector3(0, 0, 0)
@@ -14,6 +14,9 @@ function game.initControls()
 	for k, v in pairs(game.controls) do
 		k = false
 	end
+	--
+	game.controls.idle = true
+	--
 	game.sticks.left = vmath.vector3(0, 0, 0)
 	game.sticks.right = vmath.vector3(0, 0, 0)
 end

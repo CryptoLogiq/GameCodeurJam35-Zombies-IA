@@ -44,8 +44,8 @@ animations {
 }
 animations {
   id: "idle_up"
-  start_tile: 12
-  end_tile: 12
+  start_tile: 13
+  end_tile: 13
   playback: PLAYBACK_LOOP_FORWARD
   fps: 6
   flip_horizontal: 0
@@ -71,7 +71,7 @@ animations {
 }
 animations {
   id: "up"
-  start_tile: 12
+  start_tile: 13
   end_tile: 16
   playback: PLAYBACK_LOOP_FORWARD
   fps: 6

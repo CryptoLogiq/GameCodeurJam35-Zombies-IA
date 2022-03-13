@@ -75,7 +75,7 @@ components {
 }
 components {
   id: "Mouvement"
-  component: "/Scripts/Mouvement.script"
+  component: "/Scripts/Animations.script"
   position {
     x: 0.0
     y: 0.0
@@ -137,7 +137,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "sprite_player"
+  id: "sprite"
   type: "sprite"
   data: "tile_set: \"/ressources/spritesheet/dudeWutIsScratch.tilesource\"\n"
   "default_animation: \"idle_down\"\n"

@@ -1,6 +1,5 @@
 function init(self)
 	self.entity = newEntity(self, go.get_id(), "player")
-	print(self.entity.index)
 	--
 	self.position = go.get_position()
 	self.velocity = vmath.vector3(0, 0, 0)
@@ -11,6 +10,10 @@ function final(self)
 end
 
 function update(self, dt)
+	local dir = {"left","right","up","down", "idle"}
+	for n=1, #dir do
+		self.entity[dir[n]] = game.controls[dir[n]]
+	end
 	
 	local norm_x, norm_y = game.getVector2Normalise()
 	--

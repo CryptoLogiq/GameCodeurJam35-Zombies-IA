@@ -22,6 +22,7 @@ function newEntity(self, pID, pType) -- self == script self (not GameObject self
 	entity.right = false
 	entity.up = false
 	entity.down = false
+	entity.idle = false
 	--
 	table.insert(Lst_Entity, entity)
 	--
