@@ -89,5 +89,8 @@ function newTimer(delay)
 end
 --
 
+-- ## General Entity ##
+require "Scripts_Lua.EntityManager"
+
 -- ## General Maths ##
 require "Scripts_Lua.maths"
