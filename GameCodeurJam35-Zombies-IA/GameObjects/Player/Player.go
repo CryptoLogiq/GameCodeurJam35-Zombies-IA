@@ -74,7 +74,7 @@ components {
   }
 }
 components {
-  id: "Mouvement"
+  id: "Animations"
   component: "/Scripts/Animations.script"
   position {
     x: 0.0
