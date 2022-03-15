@@ -1,6 +1,6 @@
 tile_set: "/Maps/Cimetiere.tilesource"
 layers {
-  id: "layer1"
+  id: "layer0"
   z: 0.0
   is_visible: 1
   cell {
