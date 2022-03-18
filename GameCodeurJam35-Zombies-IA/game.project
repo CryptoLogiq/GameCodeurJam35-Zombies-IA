@@ -21,7 +21,7 @@ show_made_with_defold = 0
 show_console_banner = 0
 
 [physics]
-debug = 1
+debug = 0
 debug_alpha = 0.5
 
 [input]
