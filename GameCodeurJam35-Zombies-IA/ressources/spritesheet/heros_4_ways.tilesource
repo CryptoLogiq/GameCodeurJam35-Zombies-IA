@@ -1,6 +1,6 @@
 image: "/ressources/spritesheet/heros_4_ways.png"
-tile_width: 85
-tile_height: 128
+tile_width: 48
+tile_height: 64
 tile_margin: 0
 tile_spacing: 0
 collision: ""

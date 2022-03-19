@@ -5,6 +5,11 @@
 
 Lst_Entity = {}
 
+function entitypurgeList()
+	Lst_Entity = {}
+end
+
+
 function newEntity(self, pID, pType) -- self == script self (not GameObject self)
 
 	-- Search if entity allready exist :

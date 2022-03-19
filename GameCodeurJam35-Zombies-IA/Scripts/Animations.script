@@ -7,36 +7,42 @@ function final(self)
 end
 
 function update(self, dt)
-	local animation = hash(go.get("#sprite", "animation"))
 
-	-- anim move :
-	if 		self.entity.left or self.entity.right then
-		if 		self.entity.left and animation ~= hash("left") then
-			msg.post("#sprite", "play_animation", {id = hash("left")})
-			
-		elseif 	self.entity.right and animation ~= hash("right") then
-			msg.post("#sprite", "play_animation", {id = hash("right")})
-		end
+	local animation = nil
+	if self.entity.type == "player" then
+		animation = hash(go.get("#sprite", "animation"))
+	else
 		
-	elseif self.entity.up or self.entity.down then
-		if 	self.entity.up and animation ~= hash("up") then
-			msg.post("#sprite", "play_animation", {id = hash("up")})
-			
-		elseif 	self.entity.down and animation ~= hash("down") then
-			msg.post("#sprite", "play_animation", {id = hash("down")})
-		end
-		
-	elseif self.entity.idle then -- idle :
-		if animation == hash("left") then
-			msg.post("#sprite", "play_animation", {id = hash("idle_left")})
-		elseif 	animation == hash("right") then
-			msg.post("#sprite", "play_animation", {id = hash("idle_right")})
-		elseif 	animation == hash("up") then
-			msg.post("#sprite", "play_animation", {id = hash("idle_up")})
-		elseif 	animation == hash("down") then
-			msg.post("#sprite", "play_animation", {id = hash("idle_down")})
-		end
 	end
+
+		-- anim move :
+		if 		self.entity.left or self.entity.right then
+			if 		self.entity.left and animation ~= hash("left") then
+				msg.post("#sprite", "play_animation", {id = hash("left")})
+				
+			elseif 	self.entity.right and animation ~= hash("right") then
+				msg.post("#sprite", "play_animation", {id = hash("right")})
+			end
+			
+		elseif self.entity.up or self.entity.down then
+			if 	self.entity.up and animation ~= hash("up") then
+				msg.post("#sprite", "play_animation", {id = hash("up")})
+				
+			elseif 	self.entity.down and animation ~= hash("down") then
+				msg.post("#sprite", "play_animation", {id = hash("down")})
+			end
+			
+		elseif self.entity.idle then -- idle :
+			if animation == hash("left") then
+				msg.post("#sprite", "play_animation", {id = hash("idle_left")})
+			elseif 	animation == hash("right") then
+				msg.post("#sprite", "play_animation", {id = hash("idle_right")})
+			elseif 	animation == hash("up") then
+				msg.post("#sprite", "play_animation", {id = hash("idle_up")})
+			elseif 	animation == hash("down") then
+				msg.post("#sprite", "play_animation", {id = hash("idle_down")})
+			end
+		end
 end
 
 function on_message(self, message_id, message, sender)

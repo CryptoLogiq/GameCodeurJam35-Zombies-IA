@@ -58,6 +58,21 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "Animations"
+  component: "/Scripts/Animations.script"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "collider"
   type: "collisionobject"
@@ -85,8 +100,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 24.0\n"
-  "  data: 34.0\n"
+  "  data: 19.0\n"
+  "  data: 32.0\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"
