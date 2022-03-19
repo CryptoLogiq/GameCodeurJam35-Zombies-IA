@@ -1,6 +1,6 @@
 components {
-  id: "Player"
-  component: "/Scripts/Player/Player.script"
+  id: "Attack"
+  component: "/Scripts/IA_Scripts/Attack.script"
   position {
     x: 0.0
     y: 0.0
@@ -14,8 +14,8 @@ components {
   }
 }
 components {
-  id: "Skill_Poison"
-  component: "/Scripts/Player/Skill_Poison.script"
+  id: "Follow"
+  component: "/Scripts/IA_Scripts/Folow_Me.script"
   position {
     x: 0.0
     y: 0.0
@@ -29,8 +29,8 @@ components {
   }
 }
 components {
-  id: "Skill_Explode"
-  component: "/Scripts/Player/Skill_Explode.script"
+  id: "Zombies_IA"
+  component: "/Scripts/IA_Scripts/Zombies_IA.script"
   position {
     x: 0.0
     y: 0.0
@@ -44,38 +44,8 @@ components {
   }
 }
 components {
-  id: "Skill_Attack_Target"
-  component: "/Scripts/Player/Skill_Attack_Target.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-components {
-  id: "Skill_Control"
-  component: "/Scripts/Player/Skill_Control.script"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-components {
-  id: "Animations"
-  component: "/Scripts/Animations.script"
+  id: "Target"
+  component: "/Scripts/IA_Scripts/Target.script"
   position {
     x: 0.0
     y: 0.0
@@ -89,7 +59,7 @@ components {
   }
 }
 embedded_components {
-  id: "Player_collider"
+  id: "collider"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
   "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
@@ -116,7 +86,7 @@ embedded_components {
   "    count: 3\n"
   "  }\n"
   "  data: 24.0\n"
-  "  data: 32.0\n"
+  "  data: 34.0\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"
@@ -137,10 +107,50 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "sprite"
+  id: "sprite_1"
   type: "sprite"
-  data: "tile_set: \"/ressources/spritesheet/heros_4_ways.tilesource\"\n"
-  "default_animation: \"idle_down\"\n"
+  data: "tile_set: \"/ressources/spritesheet/anim_zombie_1.tilesource\"\n"
+  "default_animation: \"ilde_down\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "sprite_3"
+  type: "sprite"
+  data: "tile_set: \"/ressources/spritesheet/zombie_3.tilesource\"\n"
+  "default_animation: \"ilde_down\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "sprite_2"
+  type: "sprite"
+  data: "tile_set: \"/ressources/spritesheet/anim_zombie_2.tilesource\"\n"
+  "default_animation: \"ilde_down\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""

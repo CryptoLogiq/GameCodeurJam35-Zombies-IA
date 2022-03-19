@@ -5,6 +5,8 @@
 
 game = {waitingStart=true, start=false}
 
+game.seed = math.randomseed( os.time() )
+
 game.controls = {left=false,right=false,up=false,down=false,idle=false,action=false,actionIsDown=false}
 game.sticks = {}
 game.sticks.left = vmath.vector3(0, 0, 0)
