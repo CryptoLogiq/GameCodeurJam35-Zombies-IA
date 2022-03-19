@@ -16,6 +16,42 @@ animations {
   flip_vertical: 0
 }
 animations {
+  id: "ilde_down"
+  start_tile: 8
+  end_tile: 8
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "ilde_left"
+  start_tile: 11
+  end_tile: 11
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "ilde_right"
+  start_tile: 5
+  end_tile: 5
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "ilde_up"
+  start_tile: 2
+  end_tile: 2
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 1
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
   id: "left"
   start_tile: 10
   end_tile: 12
