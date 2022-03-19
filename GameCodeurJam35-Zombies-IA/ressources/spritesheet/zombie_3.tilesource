@@ -1,5 +1,5 @@
 image: "/ressources/spritesheet/zombie_3.png"
-tile_width: 58
+tile_width: 48
 tile_height: 64
 tile_margin: 0
 tile_spacing: 0
