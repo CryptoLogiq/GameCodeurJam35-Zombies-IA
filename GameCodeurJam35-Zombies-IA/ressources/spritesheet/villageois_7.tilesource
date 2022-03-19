@@ -11,7 +11,7 @@ animations {
   start_tile: 1
   end_tile: 3
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 1
+  fps: 3
   flip_horizontal: 0
   flip_vertical: 0
 }
@@ -56,7 +56,7 @@ animations {
   start_tile: 4
   end_tile: 6
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 1
+  fps: 3
   flip_horizontal: 0
   flip_vertical: 0
 }
@@ -65,7 +65,7 @@ animations {
   start_tile: 7
   end_tile: 9
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 1
+  fps: 3
   flip_horizontal: 0
   flip_vertical: 0
 }
@@ -74,7 +74,7 @@ animations {
   start_tile: 10
   end_tile: 12
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 1
+  fps: 3
   flip_horizontal: 0
   flip_vertical: 0
 }

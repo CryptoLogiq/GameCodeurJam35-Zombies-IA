@@ -1,5 +1,5 @@
 function init(self)
-	self.entity = newEntity(self, go.get_id(), "player")
+	self.entity = getEntity(self, go.get_id())
 	--
 end
 
@@ -7,40 +7,38 @@ function final(self)
 end
 
 function update(self, dt)
-
-	local animation = nil
-	if self.entity.type == "player" then
-		animation = hash(go.get("#sprite", "animation"))
-	else
+	self.entity = getEntity(self, go.get_id())
+	--
+	local sprName = self.entity.sprBaseName..self.entity.sprBaseType
+	local animation = hash(go.get(sprName, "animation"))
+	
 		
-	end
-
 		-- anim move :
 		if 		self.entity.left or self.entity.right then
 			if 		self.entity.left and animation ~= hash("left") then
-				msg.post("#sprite", "play_animation", {id = hash("left")})
+				msg.post(sprName, "play_animation", {id = hash("left")})
 				
 			elseif 	self.entity.right and animation ~= hash("right") then
-				msg.post("#sprite", "play_animation", {id = hash("right")})
+				msg.post(sprName, "play_animation", {id = hash("right")})
 			end
 			
 		elseif self.entity.up or self.entity.down then
 			if 	self.entity.up and animation ~= hash("up") then
-				msg.post("#sprite", "play_animation", {id = hash("up")})
+				msg.post(sprName, "play_animation", {id = hash("up")})
 				
 			elseif 	self.entity.down and animation ~= hash("down") then
-				msg.post("#sprite", "play_animation", {id = hash("down")})
+				msg.post(sprName, "play_animation", {id = hash("down")})
 			end
 			
 		elseif self.entity.idle then -- idle :
 			if animation == hash("left") then
-				msg.post("#sprite", "play_animation", {id = hash("idle_left")})
+				msg.post(sprName, "play_animation", {id = hash("idle_left")})
 			elseif 	animation == hash("right") then
-				msg.post("#sprite", "play_animation", {id = hash("idle_right")})
+				msg.post(sprName, "play_animation", {id = hash("idle_right")})
 			elseif 	animation == hash("up") then
-				msg.post("#sprite", "play_animation", {id = hash("idle_up")})
+				msg.post(sprName, "play_animation", {id = hash("idle_up")})
 			elseif 	animation == hash("down") then
-				msg.post("#sprite", "play_animation", {id = hash("idle_down")})
+				msg.post(sprName, "play_animation", {id = hash("idle_down")})
 			end
 		end
 end
