@@ -1,4 +1,7 @@
 function init(self)
+
+	print(go.get_id())
+	
 	self.entity = newEntity(self, go.get_id(), "player")
 	--
 	self.position = go.get_position()
