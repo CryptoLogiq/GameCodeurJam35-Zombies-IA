@@ -9,6 +9,7 @@ width = 1280
 height = 720
 update_frequency = 60
 vsync = 0
+dynamic_orientation = 0
 
 [android]
 input_method = HiddenInputField
@@ -34,4 +35,8 @@ max_count = 256
 [gui]
 max_particlefx_count = 128
 max_count = 128
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
 
