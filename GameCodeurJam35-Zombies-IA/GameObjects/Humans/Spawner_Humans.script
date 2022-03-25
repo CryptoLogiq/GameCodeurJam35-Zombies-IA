@@ -11,10 +11,9 @@ function final(self)
 end
 
 function update(self, dt)
-	self.position = vmath.vector3(go.get_position())	
-	local newPos = vmath.vector3(self.position.x, self.position.y, 1-(self.position.y/720) )
-	go.set_position(newPos)
-	--pprint(newPos)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
 end
 
 function on_message(self, message_id, message, sender)
