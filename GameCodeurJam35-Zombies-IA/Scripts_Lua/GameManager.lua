@@ -62,6 +62,22 @@ function game.getVector2Normalise()
 	return norm_x, norm_y
 end
 
+-- ## Map ##
+
+map = {current="Village"}
+map.lst = {"Village","Crypte","Cimetiere"}
+
+function map.setMap(pMap)
+	for _, map in ipairs(map.lst) do
+		if map == pMap then
+			map.current = pMap
+			return true
+		end
+	end
+	return false
+end
+
+
 -- ## Screen ##
 
 screen = {}

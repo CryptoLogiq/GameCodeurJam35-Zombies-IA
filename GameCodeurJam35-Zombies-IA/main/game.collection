@@ -40,26 +40,6 @@ instances {
   }
 }
 instances {
-  id: "Map"
-  prototype: "/GameObjects/Maps/Maps.go"
-  position {
-    x: 0.0
-    y: 0.0
-    z: -1.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
   id: "UI_Game"
   prototype: "/GameObjects/UI/UI_Game.go"
   position {
@@ -142,6 +122,26 @@ instances {
 instances {
   id: "Spawner_Humans"
   prototype: "/GameObjects/Humans/Spawner_Humans.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "Maps"
+  collection: "/GameObjects/Maps/Maps.collection"
   position {
     x: 0.0
     y: 0.0

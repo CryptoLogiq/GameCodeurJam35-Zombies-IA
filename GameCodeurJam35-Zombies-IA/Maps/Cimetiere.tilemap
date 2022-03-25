@@ -1,4 +1,4 @@
-tile_set: "/Maps/Cimetiere.tilesource"
+tile_set: "/ressources/image/Cimetiere.tilesource"
 layers {
   id: "layer0"
   z: 0.0
