@@ -1,13 +1,12 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	self.lst_zombies = {}
+	--
+	factory.create("#factory_zombies",vmath.vector3(1180+math.random(-100,100),250+math.random(-100,100),0), nil, {life=10})
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	go.delete_all(self.lst_zombies)
+	
 end
 
 function update(self, dt)

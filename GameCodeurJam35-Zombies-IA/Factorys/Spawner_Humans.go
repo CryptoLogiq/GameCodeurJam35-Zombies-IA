@@ -1,6 +1,6 @@
 components {
   id: "Spawner_Humans"
-  component: "/GameObjects/Humans/Spawner_Humans.script"
+  component: "/Factorys/Spawner_Humans.script"
   position {
     x: 0.0
     y: 0.0
@@ -14,7 +14,7 @@ components {
   }
 }
 embedded_components {
-  id: "factory"
+  id: "factory_humans"
   type: "factory"
   data: "prototype: \"/GameObjects/Humans/Villageois.go\"\n"
   "load_dynamically: false\n"

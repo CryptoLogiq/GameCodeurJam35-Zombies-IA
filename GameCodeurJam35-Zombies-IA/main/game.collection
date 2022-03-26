@@ -121,7 +121,7 @@ instances {
 }
 instances {
   id: "Spawner_Humans"
-  prototype: "/GameObjects/Humans/Spawner_Humans.go"
+  prototype: "/Factorys/Spawner_Humans.go"
   position {
     x: 0.0
     y: 0.0
