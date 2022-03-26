@@ -1,7 +1,9 @@
 function init(self)
 	self.lst_zombies = {}
 	--
-	factory.create("#factory_zombies",vmath.vector3(1180+math.random(-100,100),250+math.random(-100,100),0), nil, {life=10})
+	for n=1, 10 do
+		factory.create("#factory_zombies",vmath.vector3(1180+math.random(-100,100),250+math.random(-100,100),0), nil, {life=10})
+	end
 end
 
 function final(self)
